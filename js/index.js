@@ -15,5 +15,6 @@ lector.leerArchivo('../el_quijote.txt', (error, texto) => {
   console.log(`Avistamientos de Don Quijote: ${sabio.buscarPalabraEspecifica(texto, 'quijote')}`);
   console.log(`Avistamientos de Sancho Panza: ${sabio.buscarPalabraEspecifica(texto, 'sancho')}`);
   console.log(`Avistamientos de Dulcinea: ${sabio.buscarPalabraEspecifica(texto, 'dulcinea')}`);
-  console.log(`Avistamientos de Rocinante: ${sabio.buscarPalabraEspecifica(texto, 'rocinante')}`);
+  console.log(`Avistamientos de Rocinante: ${sabio.buscarPalabraEspecifica(texto, 'rocinante')}`)
+  console.log(`📏 Longitud media de las palabras: ${sabio.longitudMediaPalabras(texto)} letras`);;
 });

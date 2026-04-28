@@ -29,4 +29,19 @@ function buscarPalabraEspecifica(texto, palabra) {
   
   return coincidencias ? coincidencias.length : 0;
 }
-module.exports = { contarCaracteres, contarPalabras, top10Palabras, buscarPalabraEspecifica };
+function longitudMediaPalabras(texto) {
+  // Obtenemos las palabras reales (sin filtrar las comunes, pero sí limpiando signos)
+  const palabras = limpiarTexto(texto, false);
+  
+  if (palabras.length === 0) return 0;
+
+  // Sumamos la longitud de cada palabra
+  const sumaLongitudes = palabras.reduce((acumulador, palabra) => {
+    return acumulador + palabra.length;
+  }, 0);
+
+  // Calculamos la media y redondeamos a 2 decimales
+  const media = sumaLongitudes / palabras.length;
+  return Number(media.toFixed(2));
+}
+module.exports = { contarCaracteres, contarPalabras, top10Palabras, buscarPalabraEspecifica, longitudMediaPalabras };
